@@ -1,0 +1,12 @@
+<xf:title>{{ phrase('dfcu_force_change_username') }}</xf:title>
+
+<xf:form ajax="true" class="block" data-force-flash-message="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="username" autofocus="autofocus"
+						   label="{{ phrase('user_name') }}"
+						   explain="{{ phrase('dfcu_force_change_username_explain') }}"/>
+		</div>
+		<xf:submitrow icon="save" />
+	</div>
+</xf:form>

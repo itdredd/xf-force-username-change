@@ -1,0 +1,26 @@
+{
+    "dfcu_force_change_username.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "9b6191280d3bb4d2864f973edac051c2"
+    },
+    "dfcu_force_change_username_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "2ada46808572461aa27da99a55a1bbf0"
+    },
+    "dfcu_sucess.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "505a83f220c02df2f85c3810cd9ceb38"
+    },
+    "permission.general_forceChangeUsername.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "6c83dca8a4025a2d30bdc67e2c0288ce"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "XF-Entity-User_Dredd-ForceChangeUsername-XF-Entity-User.json": {
+        "hash": "6553ccab2b6b5c84a72ef021c9f68600"
+    },
+    "XF-Pub-Controller-Account_Dredd-ForceChangeUsername-XF-Pub-Controller-Account.json": {
+        "hash": "69e344d04490902ba34aaaf6f1858d1b"
+    },
+    "XF-Pub-Controller-Member_Dredd-ForceChangeUsername-XF-Pub-Controller-Member.json": {
+        "hash": "f0e1a3a3026f334def38bebd969f6c84"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "template": "member_macros",
+    "description": "add_force_change_button",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:moderator_menu:bottom]-->",
+    "replace": "<xf:if is=\"$user.canForceChangeUsername()\">\n\t\t<a href=\"{{ link('members/force-change-username', $user) }}\" class=\"menu-linkRow\" data-xf-click=\"overlay\">{{ phrase('dfcu_force_change_username') }}</a>\n\t</xf:if>\n\t$0"
+}
