@@ -10,8 +10,7 @@ class Member extends XFCP_Member
     {
         $user = $this->assertViewableUser($params->user_id);
 
-        if (!$user->canForceChangeUsername())
-        {
+        if (!$user->canForceChangeUsername()) {
             return $this->noPermission();
         }
 

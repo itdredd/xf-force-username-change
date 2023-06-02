@@ -15,9 +15,8 @@ class Listener
         $session = $controller->app()->session();
         $visitor = \XF::visitor();
 
-        //\XF::dump([$session, $controller, $action, $params, $reply]);
-
-        if ($visitor->user_id && !in_array($action, ['Exception', 'ForceChangeUsername']) && !$reply instanceof \XF\Mvc\Reply\Error) {
+        if ($visitor->user_id && !in_array($action, ['Exception', 'ForceChangeUsername'])
+            && !$reply instanceof \XF\Mvc\Reply\Error) {
             $sessionForceChange = $session->get('forceChangeUsername');
 
             if ($sessionForceChange && $sessionForceChange < \XF::$time) {

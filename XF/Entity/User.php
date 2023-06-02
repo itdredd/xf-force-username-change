@@ -2,9 +2,6 @@
 
 namespace Dredd\ForceChangeUsername\XF\Entity;
 
-use XF\Mvc\Entity\Entity;
-use XF\Mvc\Entity\Structure;
-
 class User extends XFCP_User
 {
     public function canForceChangeUsername(&$error = null)
@@ -15,6 +12,6 @@ class User extends XFCP_User
             return false;
         }
 
-        return true;
+        return $this->isWarnable() && $visitor->hasPermission('general', 'forceChangeUsername');
     }
 }

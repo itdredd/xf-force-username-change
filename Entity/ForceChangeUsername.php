@@ -16,7 +16,7 @@ class ForceChangeUsername extends Entity
     public static function getStructure(Structure $structure)
     {
         $structure->table = 'xf_dfcu_force_change_username';
-        $structure->shortName = 'DFCU:ForceChangeUsername';
+        $structure->shortName = 'Dredd\ForceChangeUsername:ForceChangeUsername';
         $structure->primaryKey = 'request_id';
 
         $structure->columns = [
@@ -24,8 +24,6 @@ class ForceChangeUsername extends Entity
             'user_id' => ['type' => self::UINT, 'required' => true],
             'staff_user_id' => ['type' => self::UINT, 'required' => true],
         ];
-
-        $structure->getters = [];
 
         $structure->relations = [
             'User' => [
