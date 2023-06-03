@@ -19,7 +19,7 @@ class Listener
             && !$reply instanceof \XF\Mvc\Reply\Error) {
             $sessionForceChange = $session->get('forceChangeUsername');
 
-            if ($sessionForceChange && $sessionForceChange < \XF::$time) {
+            if (!$sessionForceChange || $sessionForceChange < \XF::$time) {
                 $request = $controller->app()->finder('Dredd\ForceChangeUsername:ForceChangeUsername')
                     ->where('user_id', $visitor->user_id)->fetchOne();
 
@@ -30,10 +30,6 @@ class Listener
                     $session->set('forceChangeUsername', \XF::$time + 1200);
                     $session->save();
                 }
-            }
-            else {
-                $session->set('forceChangeUsername', \XF::$time + 1200);
-                $session->save();
             }
         }
     }
