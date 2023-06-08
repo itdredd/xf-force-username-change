@@ -14,12 +14,21 @@ class Member extends XFCP_Member
             return $this->noPermission();
         }
 
-        $forceChange = \XF::em()->create('Dredd\ForceChangeUsername:ForceChangeUsername');
-        $forceChange->bulkSet([
+        /** @var \Dredd\ForceChangeUsername\Entity\ForceChangeUsername $request */
+        $existRequest = $this->finder('Dredd\ForceChangeUsername:ForceChangeUsername')
+            ->where('user_id', $user->user_id)->fetchOne();
+
+        if (!$existRequest) {
+            return $this->message(\XF::phrase('dfcu_exist_request'));
+        }
+
+
+        $request = \XF::em()->create('Dredd\ForceChangeUsername:ForceChangeUsername');
+        $request->bulkSet([
             'user_id' => $user->user_id,
             'staff_user_id' => \XF::visitor()->user_id
         ]);
-        $forceChange->save();
+        $request->save();
 
         return $this->message(\XF::phrase('dfcu_success'));
     }
