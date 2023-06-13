@@ -18,7 +18,7 @@ class Member extends XFCP_Member
         $existRequest = $this->finder('Dredd\ForceChangeUsername:ForceChangeUsername')
             ->where('user_id', $user->user_id)->fetchOne();
 
-        if (!$existRequest) {
+        if ($existRequest) {
             return $this->message(\XF::phrase('dfcu_exist_request'));
         }
 
